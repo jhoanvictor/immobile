@@ -21,4 +21,17 @@ public class DataConvert {
         }
     }
 
+    public String converterDataFromBanco(Date data) {
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+
+        //String[] arrayData = data.split("-");
+        //String datafmt = arrayData[2] + "/" + arrayData[1] + "/" + arrayData[0];
+
+
+        //return sdf1.parse(datafmt);
+        return sdf1.format(data);
+
+
+    }
+
 }

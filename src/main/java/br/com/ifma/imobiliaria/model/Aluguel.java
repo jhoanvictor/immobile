@@ -1,5 +1,8 @@
 package br.com.ifma.imobiliaria.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -7,6 +10,7 @@ import java.util.Date;
 @Entity
 public class Aluguel implements EntidadeBase {
 
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "id_locacao")
     private Locacao locacao;
