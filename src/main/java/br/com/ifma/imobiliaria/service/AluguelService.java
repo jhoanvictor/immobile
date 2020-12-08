@@ -2,9 +2,7 @@ package br.com.ifma.imobiliaria.service;
 
 import br.com.ifma.imobiliaria.model.Aluguel;
 import br.com.ifma.imobiliaria.model.Cliente;
-import br.com.ifma.imobiliaria.model.Locacao;
 import br.com.ifma.imobiliaria.repository.AluguelRepository;
-import br.com.ifma.imobiliaria.repository.LocacaoRepository;
 import br.com.ifma.imobiliaria.util.Connection;
 
 import javax.persistence.EntityManager;

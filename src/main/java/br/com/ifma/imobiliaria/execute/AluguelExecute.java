@@ -15,9 +15,10 @@ public class AluguelExecute {
 
     public static void main(String[] args) {
 
+        List<Aluguel> aluguelList = null;
         AluguelService aluguelService = new AluguelService();
 
-        List<Locacao> locacao = null;
+        List<Locacao> locacaoList = null;
         LocacaoService locacaoService = new LocacaoService();
 
         Cliente cliente = new Cliente();
@@ -25,21 +26,24 @@ public class AluguelExecute {
 
         cliente = clienteService.buscaCliente(3);
 
-        locacao = locacaoService.listarLocacao(cliente);
+        locacaoList = locacaoService.listarLocacao(cliente);
 
-        for (Locacao loc : locacao) {
+        aluguelList = aluguelService.listarLocacao(cliente);
 
-            //System.out.println(loc.getId());
+        for (Locacao loc : locacaoList) {
 
             Aluguel aluguel = new Aluguel();
             aluguel.setLocacao(loc);
             aluguel.setValorPago(new BigDecimal(200.00));
-            aluguel.setDataVencimento(new DataConvert().converterData("07/12/2020"));
-
-            System.out.println(aluguel.getLocacao().getAtivo());
+            aluguel.setDataVencimento(new DataConvert().converterData("10/11/2020"));
+            aluguel.setDataPagamento(new DataConvert().converterData("08/11/2020"));
+            aluguel.setObservacoes("Pagamento antes o vencimento");
 
             aluguelService.save(aluguel);
+        }
 
+        for (Aluguel aluguel : aluguelList) {
+            //System.out.println("Vencimento: " + new DataConvert().converterDataFromBanco(aluguel.getDataVencimento()) + "\nValor Pago: R$ " + aluguel.getValorPago());
         }
 
     }

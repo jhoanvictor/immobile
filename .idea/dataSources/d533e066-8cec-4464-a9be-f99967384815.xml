@@ -6882,6 +6882,7 @@ subtitle</ColNames>
       <ColNames>id_locacao</ColNames>
       <RefTableName>locacao</RefTableName>
       <RefColNames>idLocacao</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="1190" parent="347" name="idCliente">
       <Position>1</Position>
